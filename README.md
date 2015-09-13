@@ -15,7 +15,7 @@ Overview
 ## Usage
 
 ```
-rails new myapp --database=postgresql --skip-test-unit --skip-bundle -m https://raw.githubusercontent.com/KaitoWatanabe/rails_template/master/template.rb
+rails new myapp -m https://raw.githubusercontent.com/KaitoWatanabe/rails_template/master/template.rb
 ```
 
 ## Install

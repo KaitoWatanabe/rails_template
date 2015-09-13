@@ -6,7 +6,6 @@ end
 
 gem 'devise'
 gem 'acts-as-taggable-on'
-gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem "mini_magick"
 gem 'impressionist'
 gem 'fog'
@@ -23,9 +22,13 @@ generate :controller, "home", "index"
 route "root to: 'home#index'"
 
 # devise
-generate ':devise:install'
-environment "config.action_mailer.default_url_options = { host: 'localhost:3000' }", env: 'development'
-generate ':devise:views'
-generate :devise, "User"
-rake "db:migrate"
+after_bundle do
+  run "bundle exec spring stop"
+  generate 'devise:install'
+  environment "config.action_mailer.default_url_options = { host: 'localhost:3000' }", env: 'development'
+  generate 'devise:views'
+  generate :devise, "User"
+  rake "db:migrate"
+end
+
 
