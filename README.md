@@ -15,7 +15,7 @@ Overview
 ## Usage
 
 ```
-rails new test_app --database=postgresql --skip-test-unit --skip-bundle -m https://raw.github.com/morizyun/rails4_template/master/template.rb
+rails new myapp --database=postgresql --skip-test-unit --skip-bundle -m https://raw.githubusercontent.com/KaitoWatanabe/rails_template/master/template.rb
 ```
 
 ## Install
@@ -27,4 +27,4 @@ rails new test_app --database=postgresql --skip-test-unit --skip-bundle -m https
 
 ## Author
 
-[tcnksm](https://github.com/KaitoWatanabe)
+[KaitoWatanabe](https://github.com/KaitoWatanabe)
