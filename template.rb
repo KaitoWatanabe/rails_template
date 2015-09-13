@@ -1,5 +1,4 @@
 # Gemfile
-
 gem_group :development do
   gem "better_errors"
   gem "binding_of_caller"
@@ -15,5 +14,18 @@ gem 'slim-rails'
 gem "font-awesome-rails"
 gem 'kaminari'
 gem 'jquery-turbolinks'
-gem 'vuejs-rails'
-gem 'dotenv-rails'
+
+# application
+application 'config.i18n.default_locale = :ja'
+
+# root
+generate(:controller, "home", "index")
+route "root to: 'home#index'"
+
+# devise
+generate(:devise:install)
+environment "config.action_mailer.default_url_options = { host: 'localhost:3000' }", env: 'development'
+generate(:devise:views)
+generate(:devise, "User")
+rake "db:migrate"
+
