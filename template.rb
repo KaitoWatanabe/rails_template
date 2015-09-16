@@ -3,6 +3,8 @@ gem_group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'quiet_assets'
+  gem 'meta_request'
+  gem 'bullet'
 end
 
 gem 'devise'
@@ -16,6 +18,17 @@ gem 'cancancan'
 
 # application
 application 'config.i18n.default_locale = :ja'
+
+# development
+environment <<-CODE
+config.after_initialize do
+  Bullet.enable = true
+  Bullet.alert = true
+  Bullet.bullet_logger = true
+  Bullet.console = true
+  Bullet.rails_logger = true
+end
+CODE
 
 # root
 generate :controller, "home", "index"
