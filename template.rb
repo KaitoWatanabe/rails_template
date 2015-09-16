@@ -30,6 +30,7 @@ config.after_initialize do
   Bullet.rails_logger = true
 end
 CODE
+, env: 'development'
 
 # root
 generate :controller, "home", "index"
