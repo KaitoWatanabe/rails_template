@@ -5,20 +5,18 @@ Overview
 
 ## Description
 
-
-## Demo
-
-## VS.
-
 ## Requirement
+
+```
+ruby
+rails
+```
 
 ## Usage
 
 ```
 rails new myapp -m https://raw.githubusercontent.com/KaitoWatanabe/rails_template/master/template.rb
 ```
-
-## Install
 
 ## Contribution
 
