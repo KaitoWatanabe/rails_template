@@ -5,6 +5,7 @@ gem_group :development do
   gem 'quiet_assets'
   gem 'meta_request'
   gem 'bullet'
+  gem "rails_best_practices"
 end
 
 gem 'devise'
