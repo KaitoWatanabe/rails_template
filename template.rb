@@ -5,7 +5,6 @@ gem_group :development do
   gem 'quiet_assets'
   gem 'meta_request'
   gem 'bullet'
-  gem "rails_best_practices"
 end
 
 gem 'devise'
@@ -21,7 +20,7 @@ gem 'cancancan'
 application 'config.i18n.default_locale = :ja'
 
 # development
-environment <<-CODE
+bullet = <<CODE
 config.after_initialize do
   Bullet.enable = true
   Bullet.alert = true
@@ -30,17 +29,18 @@ config.after_initialize do
   Bullet.rails_logger = true
 end
 CODE
-, env: 'development'
+environment bullet, env: 'development'
 
 # root
 generate :controller, "home", "index"
 route "root to: 'home#index'"
 
-initializer 'better_errors.rb', <<-CODE
+better_errors = <<'CODE'
 if defined? BetterErrors
   BetterErrors.editor = proc { |file, line| "viminiterm://open?url=file://#{file}&line=#{line}" }
 end
 CODE
+initializer('better_errors.rb', better_errors)
 
 after_bundle do
   run "gem install html2slim --no-ri --no-rdoc"
