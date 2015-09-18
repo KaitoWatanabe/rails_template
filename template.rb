@@ -6,6 +6,7 @@ gem_group :development do
   gem 'meta_request'
   gem 'bullet'
   gem 'annotate'
+  gem "rails_best_practices"
 end
 
 gem 'devise'
