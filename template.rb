@@ -20,6 +20,7 @@ gem 'remotipart', '~> 1.2'
 
 # application
 application 'config.i18n.default_locale = :ja'
+application "config.time_zone = 'Tokyo'"
 
 # development
 bullet = <<CODE
