@@ -5,6 +5,7 @@ gem_group :development do
   gem 'quiet_assets'
   gem 'meta_request'
   gem 'bullet'
+  gem 'annotate'
 end
 
 gem 'devise'
@@ -15,6 +16,7 @@ gem "font-awesome-rails"
 gem 'kaminari'
 gem 'jquery-turbolinks'
 gem 'cancancan'
+gem 'remotipart', '~> 1.2'
 
 # application
 application 'config.i18n.default_locale = :ja'
@@ -54,6 +56,9 @@ after_bundle do
   run "for file in app/views/devise/**/*.erb; do erb2slim $file ${file%erb}slim && rm $file; done"
   generate :devise, "User"
   rake "db:migrate"
+
+  # annotate
+  generate 'annotate:install'
 end
 
 
