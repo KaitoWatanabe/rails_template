@@ -46,6 +46,9 @@ end
 CODE
 initializer('better_errors.rb', better_errors)
 
+# create DB
+rake "db:create"
+
 after_bundle do
   run "gem install html2slim --no-ri --no-rdoc"
   run "erb2slim app/views/layouts/application.html.erb && rm app/views/layouts/application.html.erb"
