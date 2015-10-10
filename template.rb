@@ -20,6 +20,7 @@ gem 'cancancan'
 gem 'remotipart', '~> 1.2'
 gem 'seed-fu', '~> 2.3'
 gem 'ransack'
+gem 'material_design_lite-rails'
 
 # application
 application 'config.i18n.default_locale = :ja'
