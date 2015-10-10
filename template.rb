@@ -66,6 +66,17 @@ after_bundle do
   generate 'annotate:install'
 end
 
+file 'config/locales/ja.yml', <<-CODE
+  ja:
+    views:
+      pagination:
+        first: "&laquo;"
+        last: "&raquo;"
+        previous: "&lsaquo;"
+        next: "&rsaquo;"
+        truncate: "..."
+CODE
+
 
 
 
